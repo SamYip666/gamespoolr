@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Games Portal - Your Gaming Paradise</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+        }
+        .modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .game-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .game-description {
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            border: 1px solid rgba(75, 85, 99, 0.3);
+        }
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+            margin-top: 0.75rem;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: #e5e7eb;
+        }
+        .feature-item:before {
+            content: '✦';
+            color: #818cf8;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+    <header class="bg-gray-800 text-white py-12 px-6 shadow-lg text-center mb-12">
+        <h1 class="text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-400 tracking-wide">
+            Online Gaming Paradise
+        </h1>
+        <p class="text-2xl font-light text-gray-300">Your Ultimate Gaming Experience</p>
+    </header>
+
+    <main class="container mx-auto px-6 py-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <!-- Game 1 Card -->
+            <div class="bg-gray-800 rounded-xl shadow-2xl hover:shadow-indigo-500/20 transition-all duration-300 overflow-hidden transform hover:-translate-y-1">
+                <h2 class="text-2xl font-bold p-6 bg-gradient-to-r from-gray-800 to-gray-700 text-white border-b border-gray-700">Before the Ash</h2>
+                <div class="game-preview cursor-pointer p-4" onclick="openGameModal('game1')">
+                    <img src="https://img.itch.zone/aW1hZ2UvMzQwNTUyMC8yMDQwMTExNy5wbmc=/original/kC1HD5.png" 
+                         alt="Before the Ash Preview" 
+                         class="w-full h-80 object-cover rounded-lg shadow-lg">
+                </div>
+                <div class="grid grid-cols-3 gap-4 p-4 bg-gray-700/50">
+                    <img src="https://img.itch.zone/aW1hZ2UvMzQwNTUyMC8yMDQwMTExNy5wbmc=/original/kC1HD5.png" 
+                         alt="Screenshot 1" 
+                         class="w-full h-24 object-cover rounded cursor-pointer"
+                         onclick="openImageModal(this.src)">
+                    <img src="https://img.itch.zone/aW1hZ2UvMzQwNTUyMC8yMDQwMDY5Ny5wbmc=/original/o7e95F.png" 
+                         alt="Screenshot 2" 
+                         class="w-full h-24 object-cover rounded cursor-pointer"
+                         onclick="openImageModal(this.src)">
+                    <img src="https://img.itch.zone/aW1hZ2UvMzQwNTUyMC8yMDM5OTA1Ny5qcGc=/original/6wG8Bg.jpg" 
+                         alt="Screenshot 3" 
+                         class="w-full h-24 object-cover rounded cursor-pointer"
+                         onclick="openImageModal(this.src)">
+                </div>
+                <div class="p-6 bg-gray-800">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="game-tag bg-indigo-900 text-indigo-200">Post-apocalyptic</span>
+                        <span class="game-tag bg-purple-900 text-purple-200">Adventure</span>
+                        <span class="game-tag bg-green-900 text-green-200">Difficulty: Medium</span>
+                    </div>
+                    <div class="game-description bg-gray-700/30 backdrop-blur-sm">
+                        <p class="text-xl font-medium text-white">Epic Adventure in a Post-apocalyptic World</p>
+                        <p class="mt-3 text-gray-300">Experience an atmospheric adventure in a post-apocalyptic world. Navigate through challenging environments and uncover the mysteries that lie before the ash.</p>
+                        <div class="feature-list mt-4">
+                            <div class="feature-item text-gray-300">Immersive Storyline</div>
+                            <div class="feature-item text-gray-300">Unique Post-apocalyptic Atmosphere</div>
+                            <div class="feature-item text-gray-300">Rich Exploration Elements</div>
+                            <div class="feature-item text-gray-300">Challenging Puzzle Mechanics</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game 2 Card -->
+            <div class="bg-gray-800 rounded-xl shadow-2xl hover:shadow-indigo-500/20 transition-all duration-300 overflow-hidden transform hover:-translate-y-1">
+                <h2 class="text-2xl font-bold p-6 bg-gradient-to-r from-gray-800 to-gray-700 text-white border-b border-gray-700">Adventure Quest</h2>
+                <div class="game-preview cursor-pointer p-4" onclick="openGameModal('game2')">
+                    <img src="https://img.itch.zone/aW1nLzE4ODExODEyLmpwZw==/original/l4FcfD.jpg" 
+                         alt="Adventure Quest Preview" 
+                         class="w-full h-80 object-cover rounded-lg shadow-lg">
+                </div>
+                <div class="grid grid-cols-3 gap-4 p-4 bg-gray-700/50">
+                    <img src="https://img.itch.zone/aW1nLzE5NzE1ODA3LnBuZw==/original/ibBE0R.png" 
+                         alt="Screenshot 1" 
+                         class="w-full h-24 object-cover rounded cursor-pointer"
+                         onclick="openImageModal(this.src)">
+                    <img src="https://img.itch.zone/aW1nLzE5MjY1MDU1LnBuZw==/original/pZszEs.png" 
+                         alt="Screenshot 2" 
+                         class="w-full h-24 object-cover rounded cursor-pointer"
+                         onclick="openImageModal(this.src)">
+                    <img src="https://img.itch.zone/aW1nLzE5MjA3MTcxLnBuZw==/original/feFMwE.png" 
+                         alt="Screenshot 3" 
+                         class="w-full h-24 object-cover rounded cursor-pointer"
+                         onclick="openImageModal(this.src)">
+                </div>
+                <div class="p-6 bg-gray-800">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="game-tag bg-yellow-900 text-yellow-200">RPG</span>
+                        <span class="game-tag bg-blue-900 text-blue-200">Strategy</span>
+                        <span class="game-tag bg-green-900 text-green-200">Difficulty: Hard</span>
+                    </div>
+                    <div class="game-description bg-gray-700/30 backdrop-blur-sm">
+                        <p class="text-xl font-medium text-white">Epic Fantasy Adventure Journey</p>
+                        <p class="mt-3 text-gray-300">Embark on an epic quest filled with challenges and mysteries. Test your skills and strategy in this engaging adventure game.</p>
+                        <div class="feature-list mt-4">
+                            <div class="feature-item text-gray-300">Rich Character Progression</div>
+                            <div class="feature-item text-gray-300">Strategic Combat System</div>
+                            <div class="feature-item text-gray-300">Engaging Story Quests</div>
+                            <div class="feature-item text-gray-300">Diverse Equipment System</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Game 3 Card -->
+            <div class="bg-gray-800 rounded-xl shadow-2xl hover:shadow-indigo-500/20 transition-all duration-300 overflow-hidden transform hover:-translate-y-1">
+                <h2 class="text-2xl font-bold p-6 bg-gradient-to-r from-gray-800 to-gray-700 text-white border-b border-gray-700">Space Explorer</h2>
+                <div class="game-preview cursor-pointer p-4" onclick="openGameModal('game3')">
+                    <img src="https://img.itch.zone/aW1hZ2UvMjg1NTU2NS8xOTI5NjA1MC5wbmc=/original/exdV6F.png" 
+                         alt="Space Explorer Preview" 
+                         class="w-full h-80 object-cover rounded-lg shadow-lg">
+                </div>
+                <div class="grid grid-cols-3 gap-4 p-4 bg-gray-700/50">
+                    <img src="https://img.itch.zone/aW1hZ2UvMjg1NTU2NS8xNzkzODc2MS5qcGc=/original/ozInz1.jpg" 
+                         alt="Screenshot 1" 
+                         class="w-full h-24 object-cover rounded cursor-pointer"
+                         onclick="openImageModal(this.src)">
+                    <img src="https://img.itch.zone/aW1hZ2UvMjg1NTU2NS8xNzkzODc1Ny5qcGc=/original/vkUdgl.jpg" 
+                         alt="Screenshot 2" 
+                         class="w-full h-24 object-cover rounded cursor-pointer"
+                         onclick="openImageModal(this.src)">
+                    <img src="https://img.itch.zone/aW1hZ2UvMjg1NTU2NS8xNzkzODc2MC5qcGc=/original/PmPYkp.jpg" 
+                         alt="Screenshot 3" 
+                         class="w-full h-24 object-cover rounded cursor-pointer"
+                         onclick="openImageModal(this.src)">
+                </div>
+                <div class="p-6 bg-gray-800">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="game-tag bg-red-900 text-red-200">Space</span>
+                        <span class="game-tag bg-blue-900 text-blue-200">Action</span>
+                        <span class="game-tag bg-green-900 text-green-200">Difficulty: Easy</span>
+                    </div>
+                    <div class="game-description bg-gray-700/30 backdrop-blur-sm">
+                        <p class="text-xl font-medium text-white">Explore the Vast Universe</p>
+                        <p class="mt-3 text-gray-300">Embark on an exciting space adventure. Navigate through mysterious galaxies and discover the wonders of the universe in this thrilling space exploration game.</p>
+                        <div class="feature-list mt-4">
+                            <div class="feature-item text-gray-300">Space Exploration</div>
+                            <div class="feature-item text-gray-300">Dynamic Combat System</div>
+                            <div class="feature-item text-gray-300">Resource Management</div>
+                            <div class="feature-item text-gray-300">Ship Customization</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Game Modal -->
+    <div id="gameModal" class="modal">
+        <div class="bg-white w-2/3 h-2/3 relative rounded-lg">
+            <button onclick="closeGameModal()" class="absolute top-4 right-4 text-gray-600 hover:text-gray-800 text-2xl">&times;</button>
+            <iframe id="gameFrame" class="w-full h-full rounded-lg" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <div class="relative w-2/3">
+            <button onclick="closeImageModal()" class="absolute top-4 right-4 text-white hover:text-gray-200 text-2xl">&times;</button>
+            <img id="modalImage" class="w-full rounded-lg" src="" alt="Screenshot">
+        </div>
+    </div>
+
+    <script>
+        function openGameModal(gameId) {
+            const modal = document.getElementById('gameModal');
+            const gameFrame = document.getElementById('gameFrame');
+            const gameUrls = {
+                'game1': 'https://html-classic.itch.zone/html/13164042/before_the_ash_1.0_html5/index.html',
+                'game2': 'https://html-classic.itch.zone/html/12140348/index.html',
+                'game3': 'https://html-classic.itch.zone/html/12188461/index.html'
+            };
+            gameFrame.src = gameUrls[gameId];
+            modal.classList.add('active');
+        }
+
+        function closeGameModal() {
+            const modal = document.getElementById('gameModal');
+            const gameFrame = document.getElementById('gameFrame');
+            gameFrame.src = '';
+            modal.classList.remove('active');
+        }
+
+        function openImageModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = imageSrc;
+            modal.classList.add('active');
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+        }
+    </script>
+</body>
+</html>
